@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/Medusa-io/nodejs-api.svg?branch=master)](https://travis-ci.org/Medusa-io/nodejs-api)
-[![NSP Status](https://nodesecurity.io/orgs/medusa/projects/b8de8e84-1648-4ccc-883e-9845a1bb1bb4/badge)](https://nodesecurity.io/orgs/medusa/projects/b8de8e84-1648-4ccc-883e-9845a1bb1bb4)
+[![NSP Status](https://nodesecurity.io/orgs/medusa/projects/e3400897-5d89-47e2-845f-f39ac8c04c62/badge)](https://nodesecurity.io/orgs/medusa/projects/e3400897-5d89-47e2-845f-f39ac8c04c62)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/Medusa-io/nodejs-api/badges/devDependencies.svg)](https://www.bithound.io/github/Medusa-io/nodejs-api/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/Medusa-io/nodejs-api/badges/code.svg)](https://www.bithound.io/github/Medusa-io/nodejs-api)
 [![bitHound Overall Score](https://www.bithound.io/github/Medusa-io/nodejs-api/badges/score.svg)](https://www.bithound.io/github/Medusa-io/nodejs-api)
