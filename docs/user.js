@@ -47,7 +47,7 @@
             }
         }
     ]
-    * @apiErrorExample {json} Create Employees error
+    * @apiErrorExample {json} Create User error
     *    HTTP/1.1 500 Internal Server Error
 **/
 
@@ -145,7 +145,7 @@
             "message": "Id invalido!"
         }
     ]
-    * @apiErrorExample {json} Create Employees error
+    * @apiErrorExample {json} Create User error
     *    HTTP/1.1 500 Internal Server Error
 **/
 
@@ -175,6 +175,6 @@
             "message": "Id invalido!"
         }
     ]
-    * @apiErrorExample {json} Create Employees error
+    * @apiErrorExample {json} Create User error
     *    HTTP/1.1 500 Internal Server Error
 **/
