@@ -39,7 +39,7 @@
 **/
 
 /**
-    * @api {post} /api/v1/authenticate Authenticate
+    * @api {post} /api/v1/me Authenticate Me
     * @apiGroup Authenticate
     * @apiVersion 1.0.0
     * @apiHeader {String}  token Users unique access-key.
@@ -63,6 +63,36 @@
         "gcm": "",
         "avatar": ""
     }
+    * @apiErrorExample {json} Token Invalid
+    *    HTTP/1.1 404 Bad Request
+   [
+        {
+            "title": "Token do Usuário",
+            "message": "Erro no token do usuário"
+        }
+    ]
+    * @apiErrorExample {json} Authenticate Internal error
+    *    HTTP/1.1 500 Internal Server Error
+**/
+
+
+/**
+    * @api {post} /api/v1/logout Authenticate Logout
+    * @apiGroup Authenticate
+    * @apiVersion 1.0.0
+    * @apiHeader {String}  token Users unique access-key.
+    * @apiExample {curl} Example:
+        curl http://localhost:3000/api/v1/logout \
+        -H 'Cache-Control: no-cache' \
+        -H 'Content-Type: application/x-www-form-urlencoded' \
+    * @apiSuccessExample {json} Success
+    *    HTTP/1.1 200 OK
+     [
+        {
+            "title": "Alterado com sucesso!",
+            "message": "Conseguimos alterar o seu registro com sucesso!"
+        }
+    ]
     * @apiErrorExample {json} Token Invalid
     *    HTTP/1.1 404 Bad Request
    [

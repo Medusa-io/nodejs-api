@@ -9,12 +9,12 @@ module.exports = app => {
     return {
         authenticate: Help.authenticate(User, Validate, Business, Errors),
         logout: (req, res) =>
-            Persistence.update({
+            Persistence.update(res)({
                 $and: [
                     {_id: req.user._id},
                     {email: req.user.email}
                 ]
-            }, res)({token: null}),
+            })({token: null}),
         me: (req, res) => {
             Persistence.findOne(res)({
                 $and: [
