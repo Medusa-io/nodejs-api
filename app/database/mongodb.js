@@ -9,7 +9,6 @@ const options = {
 
 mongoose.connect(url, options)
     .then(() => {
-        console.log('Mongodb Connected : )')
         mongoose.connection.on('error', (err) => {
             console.log(`mongoose connection: ${err}`)
         })

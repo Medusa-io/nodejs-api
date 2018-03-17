@@ -64,7 +64,7 @@ module.exports = ({
             })
     },
     defaultAuthenticate: (done, request, userCredentials, ROTA) => {
-        Request
+        request
             .post(ROTA)
             .send(userCredentials)
             .expect(200)

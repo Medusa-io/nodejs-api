@@ -1,40 +1,19 @@
-describe('Routes Authorization', () => {
+describe('Routes Authenticate', () => {
     const User = require('../app/modules/models/user')
     const rotaUrl = `${process.env.API_VERSION}/authenticate`
-    let defaultObject = objectAuthenticate
+    let defaultObject = objectAuthenticate.create
+    let defaultCredencial = objectAuthenticate.auth
 
     beforeEach((done) => {
-        Authorization.remove({})
-            .then(() => Authorization.create(defaultObject))
-            .then(response => {
-                defaultObject._id = `${response._id}`
-                done()
-            })
+        User.remove({})
+            .then(() => User.create(defaultObject))
+            .then(() => done())
             .catch(err => console.log('estou aqui', err))
     })
 
-    describe(`Route get ${rotaUrl}`, (done) => {
-        it('should list a Authorization', (done) => {
-            requestAux.defaultGet(done, request, defaultObject, rotaUrl)
-        })
-    })
-
-    describe(`Route get ${rotaUrl}{_id}`, () => {
-        it('should return a one of Authorization', (done) => {
-            requestAux.defaultGetOne(done, request, defaultObject, `${rotaUrl}/${defaultObject._id}`)
-        })
-    })
-
-    describe(`Route put ${rotaUrl}{id}`, () => {
-        it('should update a Authorization', (done) => {
-            defaultObject.status = false
-            requestAux.defaultPut(done, request, defaultObject, `${rotaUrl}/${defaultObject._id}`)
-        })
-    })
-
-    describe(`Route delete ${rotaUrl}{id}`, () => {
-        it('should delete a Authorization', (done) => {
-            requestAux.defaultDelete(done, request, `${rotaUrl}/${defaultObject._id}`)
+    describe(`Route Authenticate ${rotaUrl}`, () => {
+        it('Should Authenticate a User', (done) => {
+            requestAux.defaultAuthenticate(done, request, defaultCredencial, `${rotaUrl}`)
         })
     })
 
