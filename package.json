@@ -4,10 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "DEBUG=express:* nodemon",
-    "start": "DEBUG=express:* node app.js",
+    "dev": "nodemon",
+    "start": "node app.js",
+    "doc": "live-server ./docs/", 
     "lint": "eslint '**/*.js' ",
-    "lint:fix": "eslint '**/*.js' --fix"
+    "lint:fix": "eslint '**/*.js' --fix",
+    "test": "mocha --order default --opts  _tester/mocha.opts _tester/*.js"
   },
   "repository": {
     "type": "git",

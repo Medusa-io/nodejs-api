@@ -15,12 +15,13 @@ module.exports = app => {
                     {email: req.user.email}
                 ]
             }, res)({token: null}),
-        me: (req, res) =>
-            Persistence.findOne({
+        me: (req, res) => {
+            Persistence.findOne(res)({
                 $and: [
-                    {id: req.user.id},
+                    {_id: req.user._id},
                     {token: req.user.token}
                 ]
-            }, res)
+            })
+        }
     }
 }

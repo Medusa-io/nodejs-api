@@ -1,0 +1,8 @@
+{
+    "name": "Api Medusa",
+    "version": "1.0.0",
+    "description": "Developer Medusa",
+    "template": {
+        "forceLanguage": "en"
+    }
+}

@@ -11,8 +11,8 @@ module.exports = Model => ({
             .then(returnObject.returnUpdate(res))
             .catch(returnObject.error(res)),
 
-    findOne: res => (query, mod) =>
-        Model.findOne(query, mod)
+    findOne: res => (query) =>
+        Model.findOne(query)
             .then(returnObject.findSuccess(res))
             .catch(returnObject.error(res)),
 
