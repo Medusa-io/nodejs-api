@@ -23,3 +23,14 @@ services:
         ports:
             - 3000:3000
         command: bash -c "cd /backend && node_modules/.bin/nodemon"
+
+    documentation:
+        image: nginx
+        container_name: "documentation"
+        restart: always
+        volumes:
+        - ./doc-html:/usr/share/nginx/html
+        ports:
+        - "8080:80"
+        environment:
+        - NGINX_PORT=80
