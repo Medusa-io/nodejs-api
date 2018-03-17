@@ -1,15 +1,16 @@
 /**
-    * @api {post} /api/v1/au Create Authorization
-    * @apiGroup User
+    * @api {post} /api/v1/authorization Create Authorization
+    * @apiGroup Authorization
     * @apiVersion 1.0.0
     * @apiHeader {String}  token Users unique access-key.
     * @apiSuccess {String} status Authorization status
     * @apiSuccess {String} avatar Authorization avatar
     * @apiExample {curl} Example:
-        curl -X POST  http://localhost:4000/api/v1/authorization \
+        curl -X POST  http://localhost:3000/api/v1/authorization \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/x-www-form-urlencoded' \
-        -d 'status=truee&avatar=123459321321931
+        -H 'token: seu token aqui' \
+        -d 'status=truee&avatar=123'        
     * @apiSuccessExample {json} Success
     *    HTTP/1.1 200 OK
         {
@@ -50,9 +51,10 @@
    * @apiHeader {String}  token Users unique access-key.
    * @apiVersion 1.0.0
    * @apiExample {curl} Example:
-    curl  http://localhost:4000/api/v1/authorization
+    curl  http://localhost:3000/api/v1/authorization
     -H 'Cache-Control: no-cache' \
-    -H 'Content-Type: application/x-www-form-urlencoded'
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -H 'token: seu token aqui'
    * @apiSuccessExample {json} Success
    *    HTTP/1.1 200 OK
    [
@@ -83,11 +85,12 @@
    * @apiParam {_id} _id Authorization _id
    * @apiHeader {String}  token Users unique access-key.
    * @apiVersion 1.0.0
-   * @apiGroup User
+   * @apiGroup Authorization
    * @apiExample {curl} Example:
-    curl  http://localhost:4000/api/v1/authorization/5aa59832aa1c5a1c53c70056 \
+    curl  http://localhost:3000/api/v1/authorization/5aa59832aa1c5a1c53c70056 \
     -H 'Cache-Control: no-cache' \
-    -H 'Content-Type: application/x-www-form-urlencoded'
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -H 'token: seu token aqui'
    * @apiSuccessExample {json} Success
    *    HTTP/1.1 200 OK
      {
@@ -112,16 +115,17 @@
 
 /**
     * @api {put} /api/v1/authorization/:_id Update Authorization
-    * @apiGroup User
+    * @apiGroup Authorization
     * @apiHeader {String}  token Users unique access-key.
     * @apiVersion 1.0.0
     * @apiParam {_id} _id Authorization _id
     * @apiSuccess {String} status Authorization name Optional
     * @apiSuccess {String} avatar Authorization email Optional
     * @apiExample {curl} Example:
-        curl -X PUT  http://localhost:4000/api/v1/authorization/5aa59832aa1c5a1c53c70056 \
+        curl -X PUT  http://localhost:3000/api/v1/authorization/5aa59832aa1c5a1c53c70056 \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H 'token: seu token aqui' \
         -d 'name=higor2'
     * @apiSuccessExample {json} Success
     *    HTTP/1.1 200 OK
@@ -139,7 +143,7 @@
             "message": "Id invalido!"
         }
     ]
-    * @apiErrorExample {json} Create Employees error
+    * @apiErrorExample {json} Update Employees error
     *    HTTP/1.1 500 Internal Server Error
 **/
 
@@ -150,8 +154,9 @@
     * @apiHeader {String}  token Users unique access-key.
     * @apiParam {_id} _id User _id
     * @apiExample {curl} Example:
-        curl -X DELETE  http://localhost:4000/api/v1/authorization/5aa59832aa1c5a1c53c70056 \
+        curl -X DELETE  http://localhost:3000/api/v1/authorization/5aa59832aa1c5a1c53c70056 \
         -H 'Cache-Control: no-cache' \
+        -H 'token: seu token aqui' \
         -H 'Content-Type: application/x-www-form-urlencoded'
     * @apiSuccessExample {json} Success
     *    HTTP/1.1 200 OK
@@ -169,6 +174,6 @@
             "message": "Id invalido!"
         }
     ]
-    * @apiErrorExample {json} Create Authorization error
+    * @apiErrorExample {json} Delete Authorization error
     *    HTTP/1.1 500 Internal Server Error
 **/

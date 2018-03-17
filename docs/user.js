@@ -59,7 +59,8 @@
    * @apiExample {curl} Example:
     curl  http://localhost:4000/api/v1/user
     -H 'Cache-Control: no-cache' \
-    -H 'Content-Type: application/x-www-form-urlencoded'
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -H 'token: seu token aqui'
    * @apiSuccessExample {json} Success
    *    HTTP/1.1 200 OK
    [
@@ -93,7 +94,8 @@
    * @apiExample {curl} Example:
     curl  http://localhost:4000/api/v1/user/5aa59832aa1c5a1c53c70056 \
     -H 'Cache-Control: no-cache' \
-    -H 'Content-Type: application/x-www-form-urlencoded'
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -H 'token: seu token aqui'
    * @apiSuccessExample {json} Success
    *    HTTP/1.1 200 OK
     {
@@ -128,7 +130,9 @@
         curl -X PUT  http://localhost:4000/api/v1/user/5aa59832aa1c5a1c53c70056 \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H 'token: seu token aqui' \
         -d 'name=higor2'
+
     * @apiSuccessExample {json} Success
     *    HTTP/1.1 200 OK
     [
@@ -145,7 +149,7 @@
             "message": "Id invalido!"
         }
     ]
-    * @apiErrorExample {json} Create User error
+    * @apiErrorExample {json} Update User error
     *    HTTP/1.1 500 Internal Server Error
 **/
 
@@ -158,7 +162,8 @@
     * @apiExample {curl} Example:
         curl -X DELETE  http://localhost:4000/api/v1/user/5aa59832aa1c5a1c53c70056 \
         -H 'Cache-Control: no-cache' \
-        -H 'Content-Type: application/x-www-form-urlencoded'
+        -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H 'token: seu token aqui'
     * @apiSuccessExample {json} Success
     *    HTTP/1.1 200 OK
     [
@@ -175,6 +180,6 @@
             "message": "Id invalido!"
         }
     ]
-    * @apiErrorExample {json} Create User error
+    * @apiErrorExample {json} Delete User error
     *    HTTP/1.1 500 Internal Server Error
 **/

@@ -5,7 +5,7 @@
     * @apiSuccess {String} email Authenticate email
     * @apiSuccess {String} password Authenticate password
     * @apiExample {curl} Example:
-        curl -X POST  http://localhost:4000/api/v1/authenticate \
+        curl -X POST  http://localhost:3000/api/v1/authenticate \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/x-www-form-urlencoded' \
         -d 'email=higordiegoti@gmail.com&password=123456'

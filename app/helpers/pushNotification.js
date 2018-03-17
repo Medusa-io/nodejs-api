@@ -1,20 +1,25 @@
-const Expo = require('exponent-server-sdk')
+const Exponent = require('exponent-server-sdk')
 
-let expo = new Expo()
+const exponent = new Exponent()
 
-module.exports = ({
-    pushNotification: object => new Promise((resolve, reject) => {
-        try {
-            expo.sendPushNotificationsAsync([{
-                to: object.gcm,
-                sound: 'default',
-                body: object.message,
-                data: object.data
-            }])
-                .then(resolve)
-                .catch(reject)
-        } catch (error) {
-            reject(error)
-        }
-    })
+const sendPush = user => object => new Promise((resolve, reject) => {
+    console.log('estou aqui')
+    try {
+        exponent.sendPushNotificationsAsync([{
+            to: user.gcm,
+            sound: 'default',
+            body: `Entrada foi ${object.status ? 'Autorizado' : 'Não Autorizado'}`,
+            data: object.data
+        }], (response, err) => {
+            console.log(err)
+            console.log(response)
+        })
+    } catch (error) {
+        console.log(error)
+        reject(error)
+    }
 })
+
+module.exports = {
+    sendPush
+}

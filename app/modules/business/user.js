@@ -1,5 +1,6 @@
 module.exports = app => {
     const Crypto = require('./../../helpers/crypto')
+    const PushNotification = require('../../helpers/pushNotification')
     const errorSistem = require('../../errors/system/error')
     const cryptoPassword = password => Crypto.md5(password)
     const isPassword = object => object.password ? cryptoPassword(object.password) : null
@@ -20,6 +21,18 @@ module.exports = app => {
                 resolve(user)
             } catch (err) {
                 reject(errorSistem.dataProcessing)
+            }
+        }),
+        authorization: user => object => new Promise((resolve, reject) => {
+            try {
+                if (user.gcm) {
+                    PushNotification.sendPush(user)(object)
+                        .then(() => resolve(object))
+                        .catch(reject)
+                }
+                resolve(object)    
+            } catch (err) {
+                reject(err)
             }
         })
     }

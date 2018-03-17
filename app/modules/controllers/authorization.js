@@ -2,11 +2,14 @@ module.exports = app => {
     const Authorization = require('../models/authorization')
     const Persistence = require('../../helpers/persistence')(Authorization)
     const Validate = require('../../helpers/validate')
+    const Business = require('../business/user')(app)
     return {
         create: (req, res) => {
             const body = {}
             Validate.validateBody(req.body, 'status', 'avatar')(body)
-            Persistence.create(res)(body)
+            Business.authorization(req.user)(body)
+                .then(Persistence.create(res))
+                .catch(err => res.status(500).json(err))
         },
         update: (req, res) => {
             const body = {}
