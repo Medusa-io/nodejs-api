@@ -8,6 +8,8 @@ const User = new Schema({
     gcm: {type: String, default: ''},
     token: {type: String, default: ''},
     password: {type: String, required: true}
+}, {
+    timestamps: true
 })
 
 module.exports = mongoose.model('User', User)
