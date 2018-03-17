@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/Medusa-io/nodejs-api.svg?branch=master)](https://travis-ci.org/Medusa-io/nodejs-api)
 # Developer Api
     - Equipe Medusa
 # Install dependencies
