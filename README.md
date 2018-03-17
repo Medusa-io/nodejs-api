@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Medusa-io/nodejs-api.svg?branch=master)](https://travis-ci.org/Medusa-io/nodejs-api)
+[![NSP Status](https://nodesecurity.io/orgs/medusa/projects/b8de8e84-1648-4ccc-883e-9845a1bb1bb4/badge)](https://nodesecurity.io/orgs/medusa/projects/b8de8e84-1648-4ccc-883e-9845a1bb1bb4)
 # Developer Api
     - Equipe Medusa
 # Install dependencies
