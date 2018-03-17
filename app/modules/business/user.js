@@ -30,7 +30,7 @@ module.exports = app => {
                         .then(() => resolve(object))
                         .catch(reject)
                 }
-                resolve(object)    
+                resolve(object)
             } catch (err) {
                 reject(err)
             }

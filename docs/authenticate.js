@@ -73,7 +73,6 @@
     *    HTTP/1.1 500 Internal Server Error
 **/
 
-
 /**
     * @api {get} /api/v1/logout Authenticate Logout
     * @apiGroup Authenticate

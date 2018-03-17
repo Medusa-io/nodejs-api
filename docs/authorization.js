@@ -10,7 +10,7 @@
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/x-www-form-urlencoded' \
         -H 'token: seu token aqui' \
-        -d 'status=truee&avatar=123'        
+        -d 'status=truee&avatar=123'
     * @apiSuccessExample {json} Success
     *    HTTP/1.1 200 OK
         {
