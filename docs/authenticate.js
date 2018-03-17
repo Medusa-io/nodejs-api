@@ -39,12 +39,10 @@
 **/
 
 /**
-    * @api {post} /api/v1/me Authenticate Me
+    * @api {get} /api/v1/me Authenticate Me
     * @apiGroup Authenticate
     * @apiVersion 1.0.0
     * @apiHeader {String}  token Users unique access-key.
-    * @apiSuccess {String} email Authenticate email
-    * @apiSuccess {String} password Authenticate password
     * @apiExample {curl} Example:
         curl http://localhost:3000/api/v1/me \
         -H 'Cache-Control: no-cache' \
@@ -77,7 +75,7 @@
 
 
 /**
-    * @api {post} /api/v1/logout Authenticate Logout
+    * @api {get} /api/v1/logout Authenticate Logout
     * @apiGroup Authenticate
     * @apiVersion 1.0.0
     * @apiHeader {String}  token Users unique access-key.

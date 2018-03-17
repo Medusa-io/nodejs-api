@@ -54,6 +54,7 @@
 /**
    * @api {get} /api/v1/user Find All User
    * @apiGroup User
+   * @apiHeader {String}  token Users unique access-key.
    * @apiVersion 1.0.0
    * @apiExample {curl} Example:
     curl  http://localhost:4000/api/v1/user
@@ -84,8 +85,9 @@
 **/
 
 /**
-   * @api {get} /api/v1/employees/:_id Find One User
+   * @api {get} /api/v1/user/:_id Find One User
    * @apiParam {_id} _id User _id
+   * @apiHeader {String}  token Users unique access-key.
    * @apiVersion 1.0.0
    * @apiGroup User
    * @apiExample {curl} Example:
@@ -116,6 +118,7 @@
 /**
     * @api {put} /api/v1/user/:_id Update User
     * @apiGroup User
+    * @apiHeader {String}  token Users unique access-key.
     * @apiVersion 1.0.0
     * @apiParam {_id} _id User _id
     * @apiSuccess {String} name User name Optional
@@ -150,6 +153,7 @@
     * @api {delete} /api/v1/user/:_id Delete User
     * @apiGroup User
     * @apiVersion 1.0.0
+    * @apiHeader {String}  token Users unique access-key.
     * @apiParam {_id} _id User _id
     * @apiExample {curl} Example:
         curl -X DELETE  http://localhost:4000/api/v1/user/5aa59832aa1c5a1c53c70056 \
