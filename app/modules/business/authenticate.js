@@ -3,7 +3,7 @@ module.exports = app => {
     const Errors = require('../../errors/system/error')
     const Users = require('../models/user')
 
-    const isUpdate = (tokenGenerator, res) => (object) => (object[0])
+    const isUpdate = (tokenGenerator, res) => (object) => (object.nModified)
         ? res.status(200).json({token: tokenGenerator})
         : res.status(400).json([Errors.dataProcessing])
 
@@ -14,7 +14,7 @@ module.exports = app => {
                 const tokenGenerator = Generator.token(payload)
                 const query = {_id: object._id}
                 const mod = {token: tokenGenerator}
-                Users.update(mod, query)
+                Users.update(query, mod)
                     .then(isUpdate(tokenGenerator, res))
                     .catch(() => res.status(400).json([Errors.dataProcessing]))
             } catch (err) {
