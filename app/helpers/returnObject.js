@@ -11,9 +11,9 @@ module.exports = ({
             ? res.status(200).json(data)
             : res.status(400).json(Error.findOneEmpty),
     deleteSucess: res => data =>
-        (data)
-            ? res.status(200).json(Error.sucessDelete)
-            : res.status(400).json(Error.errorDelete),
+        (data.result.n)
+            ? res.status(200).json(Error.deleteSucess)
+            : res.status(400).json(Error.sucessDelete),
     findAllSuccess: res => data =>
         (data.length > 0)
             ? res.status(200).json(data)

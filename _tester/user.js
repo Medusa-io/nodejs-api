@@ -4,7 +4,7 @@ describe('Routes User', () => {
     let defaultObject = objectUser
 
     beforeEach((done) => {
-        Employees.remove({})
+        User.remove({})
             .then(() => User.create(defaultObject))
             .then(response => {
                 defaultObject._id = `${response._id}`
@@ -42,9 +42,4 @@ describe('Routes User', () => {
         })
     })
 
-    describe(`Route create ${rotaUrl}`, () => {
-        it('should create a User', (done) => {
-            requestAux.defaultPost(done, request, object, `${rotaUrl}`)
-        })
-    })
 })

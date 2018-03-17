@@ -3,13 +3,12 @@ module.exports = app => {
     const PushNotification = require('../../helpers/pushNotification')
     const errorSistem = require('../../errors/system/error')
     const cryptoPassword = password => Crypto.md5(password)
-    const isPassword = object => object.password ? cryptoPassword(object.password) : null
 
     return {
         create: user => new Promise((resolve, reject) => {
             try {
                 user.name = user.name
-                user.password = isPassword(user)
+                user.password = cryptoPassword(user.password)
                 resolve(user)
             } catch (err) {
                 reject(errorSistem.dataProcessing)

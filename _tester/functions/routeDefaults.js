@@ -2,6 +2,7 @@ module.exports = ({
     defaultGet: (done, request, defaultObject, ROTA) => {
         request
             .get(ROTA)
+            .expect(200)
             .end((err, res) => {
                 const fields = Object.keys(res.body[0])
                 const doTest = elemento => {
@@ -16,6 +17,7 @@ module.exports = ({
     defaultGetOne: (done, request, defaultObject, ROTA) => {
         request
             .get(ROTA)
+            .expect(200)
             .end((err, res) => {
                 const fields = Object.keys(res.body)
                 const doTest = (elemento) => {
@@ -31,6 +33,7 @@ module.exports = ({
         request
             .post(ROTA)
             .send(defaultObject)
+            .expect(201)
             .end((err, res) => {
                 const fields = Object.keys(res.body)
                 defaultObject._id = res.body._id
@@ -59,5 +62,14 @@ module.exports = ({
             .end((err, res) => {
                 done(err)
             })
+    },
+    defaultAuthenticate: (done, request, userCredentials, ROTA) => {
+        Request
+            .post(ROTA)
+            .send(userCredentials)
+            .expect(200)
+            .end((err, res) => {
+                done(err)
+        })
     }
 })
