@@ -9,7 +9,7 @@
     "doc": "live-server ./doc-html/",
     "lint": "eslint '**/*.js' ",
     "lint:fix": "eslint '**/*.js' --fix",
-    "test": "mocha --order default --opts  _tester/mocha.opts _tester/*.js"
+    "test": "mocha --order default --opts  _tester/mocha.opts _tester/*.js --exit"
   },
   "keywords": [],
   "author": "Higor Diego",

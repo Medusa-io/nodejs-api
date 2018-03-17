@@ -10,7 +10,6 @@ const validateFormat = require('./app/helpers/validate')
 
 const helmet = require('helmet')
 
-
 require('./app/database/mongodb')
 const app = express()
 
