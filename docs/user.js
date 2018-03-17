@@ -114,7 +114,7 @@
 **/
 
 /**
-    * @api {put} /api/v1/employees/:_id Update User
+    * @api {put} /api/v1/user/:_id Update User
     * @apiGroup User
     * @apiVersion 1.0.0
     * @apiParam {_id} _id User _id
@@ -147,7 +147,7 @@
 **/
 
 /**
-    * @api {delete} /api/v1/employees/:_id Delete User
+    * @api {delete} /api/v1/user/:_id Delete User
     * @apiGroup User
     * @apiVersion 1.0.0
     * @apiParam {_id} _id User _id

@@ -1,6 +1,6 @@
 
 # Developer Api
-
+    - Equipe Medusa
 # Install dependencies
 
 - Dependencies Application: ` npm i `

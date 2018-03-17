@@ -1,27 +1,19 @@
 {
-  "name": "hydra",
+  "name": "medusa",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon",
     "start": "node app.js",
-    "doc": "live-server ./docs/", 
+    "doc": "live-server ./doc-html/", 
     "lint": "eslint '**/*.js' ",
     "lint:fix": "eslint '**/*.js' --fix",
     "test": "mocha --order default --opts  _tester/mocha.opts _tester/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/dr_strange/hydra.git"
-  },
   "keywords": [],
-  "author": "",
+  "author": "Higor Diego",
   "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/dr_strange/hydra/issues"
-  },
-  "homepage": "https://gitlab.com/dr_strange/hydra#README",
   "devDependencies": {
     "eslint": "^4.13.1",
     "eslint-config-standard": "^11.0.0-beta.0",
