@@ -8,6 +8,9 @@ const morgan = require('morgan')
 const validator = require('express-validator')
 const validateFormat = require('./app/helpers/validate')
 
+const helmet = require('helmet')
+
+
 require('./app/database/mongodb')
 const app = express()
 
@@ -22,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(validator(validateFormat))
 app.use(morgan('dev'))
 app.use(cors())
+app.use(helmet())
 
 const port = process.env.PORT
 

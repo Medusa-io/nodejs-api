@@ -29,6 +29,7 @@
     "exponent-server-sdk": "^2.3.1",
     "express": "^4.16.2",
     "express-validator": "^4.3.0",
+    "helmet": "^3.12.0",
     "hoek": "^5.0.3",
     "jsonwebtoken": "^8.1.0",
     "mocha": "^5.0.4",
