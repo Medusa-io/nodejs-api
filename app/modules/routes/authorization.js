@@ -4,14 +4,14 @@ module.exports = app => {
     const Validate = require('../validates/authorization')(app)
 
     app.route(`${url}/report`)
-        .get(app.jwt, Controller.report)
+        .get(Controller.report)
 
     app.route(url)
-        .get(app.jwt, Controller.listAll)
+        .get(Controller.listAll)
         .post(Validate.create, Controller.create)
 
     app.route(`${url}/:_id`)
-        .get(app.jwt, Validate.isId, Controller.listOne)
-        .put(app.jwt, Validate.isId, Validate.update, Controller.update)
-        .delete(app.jwt, Validate.isId, Controller.delete)
+        .get(Validate.isId, Controller.listOne)
+        .put(Validate.isId, Validate.update, Controller.update)
+        .delete(Validate.isId, Controller.delete)
 }
