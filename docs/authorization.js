@@ -178,14 +178,13 @@
     *    HTTP/1.1 500 Internal Server Error
 **/
 
-
 /**
-    * @api {delete} /api/v1/authorization/report Authorization Report
+    * @api {get} /api/v1/authorization/report Authorization Report
     * @apiGroup Authorization
     * @apiVersion 1.0.0
     * @apiHeader {String}  token Users unique access-key.
     * @apiExample {curl} Example:
-        curl -X DELETE  http://localhost:3000/api/v1/authorization/report \
+        curl http://localhost:3000/api/v1/authorization/report \
         -H 'Cache-Control: no-cache' \
         -H 'token: seu token aqui' \
         -H 'Content-Type: application/x-www-form-urlencoded'
@@ -193,16 +192,8 @@
     *    HTTP/1.1 200 OK
     [
         {
-            "title": "Deletado",
-            "message": "Deletado com Sucesso!"
-        }
-    ]
-    * @apiErrorExample {json} Id Invalid
-    *    HTTP/1.1 404 Bad Request
-    [
-        {
-            "title": "Id",
-            "message": "Id invalido!"
+            "notAuthorizate": 0,
+            "acceptAuthorizate": 0
         }
     ]
     * @apiErrorExample {json} Delete Authorization error

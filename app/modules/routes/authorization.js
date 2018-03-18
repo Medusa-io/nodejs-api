@@ -4,7 +4,7 @@ module.exports = app => {
     const Validate = require('../validates/authorization')(app)
 
     app.route(`${url}/report`)
-        .get(app.jwt, Controller.report)
+        .get(Controller.report)
 
     app.route(url)
         .get(app.jwt, Controller.listAll)
