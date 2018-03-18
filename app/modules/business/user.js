@@ -3,6 +3,7 @@ module.exports = app => {
     const PushNotification = require('../../helpers/pushNotification')
     const errorSistem = require('../../errors/system/error')
     const cryptoPassword = password => Crypto.md5(password)
+    const Employee = require('../models/employee')
 
     return {
         create: user => new Promise((resolve, reject) => {
@@ -21,6 +22,13 @@ module.exports = app => {
             } catch (err) {
                 reject(errorSistem.dataProcessing)
             }
+        }),
+        employeeOne: object => new Promise((resolve, reject) => {
+            Employee.findOne({_id: object.employee_id})
+                .then(employee => {
+                    object.employee = employee
+                    resolve(employee)
+                }).catch(reject)
         }),
         authorization: user => object => new Promise((resolve, reject) => {
             try {

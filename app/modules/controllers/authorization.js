@@ -6,8 +6,9 @@ module.exports = app => {
     return {
         create: (req, res) => {
             const body = {}
-            Validate.validateBody(req.body, 'status', 'avatar')(body)
+            Validate.validateBody(req.body, 'status', 'avatar', 'employee_id')(body)
             Business.authorization(req.user)(body)
+                .then(Business.employeeOne)
                 .then(Persistence.create(res))
                 .catch(err => res.status(500).json(err))
         },

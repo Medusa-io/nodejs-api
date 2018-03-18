@@ -3,7 +3,7 @@ module.exports = app => {
     const Validate = require('../../helpers/validate')
     return {
         create: (req, res, next) => {
-            const required = ['name', 'password']
+            const required = ['name', 'password', 'employee_id']
             const error = Validate.requestRequired(req, required, Errors)
             error ? res.status(400).json(error) : next()
         },
@@ -13,7 +13,7 @@ module.exports = app => {
             error ? res.status(400).json(error) : next()
         },
         update: (req, res, next) => {
-            const required = ['name', 'password']
+            const required = ['name', 'password', 'employee_id']
             const error = Validate.requestOptional(req, required, Errors)
             error ? res.status(400).json(error) : next()
         },
