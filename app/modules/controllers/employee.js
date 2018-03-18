@@ -18,6 +18,13 @@ module.exports = app => {
                 .then(Persistence.update(res)(req.params))
                 .catch(err => res.status(500).json(err))
         },
+        isEmployee: (req, res) => {
+            const body = {}
+            Validate.validateBody(req.body, 'password')(body)
+            Business.update(body)
+                .then(Persistence.findOne(res))
+                .catch(err => res.status(500).json(err))
+        },
         listAll: (req, res) => Persistence.findAll(res)(req.params, req.body),
         listOne: (req, res) => Persistence.findOne(res)(req.params, req.body),
         delete: (req, res) => Persistence.remove(res)(req.params)

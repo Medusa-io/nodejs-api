@@ -7,6 +7,11 @@ module.exports = app => {
             const error = Validate.requestRequired(req, required, Errors)
             error ? res.status(400).json(error) : next()
         },
+        isEmployee: (req, res, next) => {
+            const required = ['password']
+            const error = Validate.requestRequired(req, required, Errors)
+            error ? res.status(400).json(error) : next()
+        },
         update: (req, res, next) => {
             const required = ['name', 'password']
             const error = Validate.requestOptional(req, required, Errors)
