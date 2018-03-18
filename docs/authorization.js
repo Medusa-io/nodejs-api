@@ -152,9 +152,40 @@
     * @apiGroup Authorization
     * @apiVersion 1.0.0
     * @apiHeader {String}  token Users unique access-key.
-    * @apiParam {_id} _id User _id
+    * @apiParam {_id} _id Authorization _id
     * @apiExample {curl} Example:
         curl -X DELETE  http://localhost:3000/api/v1/authorization/5aa59832aa1c5a1c53c70056 \
+        -H 'Cache-Control: no-cache' \
+        -H 'token: seu token aqui' \
+        -H 'Content-Type: application/x-www-form-urlencoded'
+    * @apiSuccessExample {json} Success
+    *    HTTP/1.1 200 OK
+    [
+        {
+            "title": "Deletado",
+            "message": "Deletado com Sucesso!"
+        }
+    ]
+    * @apiErrorExample {json} Id Invalid
+    *    HTTP/1.1 404 Bad Request
+    [
+        {
+            "title": "Id",
+            "message": "Id invalido!"
+        }
+    ]
+    * @apiErrorExample {json} Delete Authorization error
+    *    HTTP/1.1 500 Internal Server Error
+**/
+
+
+/**
+    * @api {delete} /api/v1/authorization/report Authorization Report
+    * @apiGroup Authorization
+    * @apiVersion 1.0.0
+    * @apiHeader {String}  token Users unique access-key.
+    * @apiExample {curl} Example:
+        curl -X DELETE  http://localhost:3000/api/v1/authorization/report \
         -H 'Cache-Control: no-cache' \
         -H 'token: seu token aqui' \
         -H 'Content-Type: application/x-www-form-urlencoded'

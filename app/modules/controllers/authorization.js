@@ -20,11 +20,12 @@ module.exports = app => {
         listOne: (req, res) => Persistence.findOne(res)(req.params, req.body),
         delete: (req, res) => Persistence.remove(res)(req.params),
         report: async (req, res) => {
-            const notAuthorizate = await Authorization.count({status: false})
-            const acceptAuthorizate = await Authorization.count({status: true})
-
-            console.log(notAuthorizate)
-                
+            const notAuthorizate = await Authorization.count({status: false}).exec()
+            const acceptAuthorizate = await Authorization.count({status: true}).exec()
+            res.status(200).json([{
+                notAuthorizate: notAuthorizate,
+                acceptAuthorizate: acceptAuthorizate
+            }])
         }
     }
 }
