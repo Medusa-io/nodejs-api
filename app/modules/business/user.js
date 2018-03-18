@@ -24,7 +24,7 @@ module.exports = app => {
         }),
         authorization: user => object => new Promise((resolve, reject) => {
             try {
-                if (user.gcm) {
+                if (user) {
                     PushNotification.sendPush(user)(object)
                         .then(() => resolve(object))
                         .catch(reject)
